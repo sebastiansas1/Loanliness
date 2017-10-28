@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="@android:color/white" />
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:weightSum="100">
+<!--    <Refractored.Fab.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_send"
+        android:id="@+id/fab"
+        android:tint="@android:color/white"
+        fab:fab_size="mini" />-->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp"
+        android:id="@+id/listOfMessageChat"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="90" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Type a message ..."
+        android:id="@+id/txtInputMessageChat"
+        android:layout_weight="10"
+        android:textColorHint="#ff757575"
+        android:textSize="25dp"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/send"
+        android:text="Send" />
+</LinearLayout>

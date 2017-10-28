@@ -16,24 +16,10 @@ using Android.Gms.Tasks;
 
 namespace Loanliness
 {
-    [Activity(Label = "LogIn",MainLauncher = true,Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(Label = "LogIn",Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class LoginActivity : AppCompatActivity, IOnCompleteListener
     {
         FirebaseAuth auth;
-
-        public void OnComplete(Task task)
-        {
-            if(task.IsSuccessful)
-            {
-                Toast.MakeText(this, "Registered Successfully!", ToastLength.Short).Show();
-                Finish();
-            }
-            else
-            {
-                Toast.MakeText(this, "Registration Failed! Please try again.", ToastLength.Short).Show();
-                Finish();
-            }
-        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,6 +27,9 @@ namespace Loanliness
 
             // Create your application here
             SetContentView(Resource.Layout.Login);
+
+            auth = FirebaseAuth.Instance;
+
 
             var mEmail = FindViewById<EditText>(Resource.Id.txtEmailLogIn);
             var mPass = FindViewById<EditText>(Resource.Id.txtPassLogIn);
@@ -52,8 +41,20 @@ namespace Loanliness
                 auth.CreateUserWithEmailAndPassword(mEmail.Text, mPass.Text)
                     .AddOnCompleteListener(this);
             };
+        }
 
-
+        public void OnComplete(Task task)
+        {
+            if (task.IsSuccessful)
+            {
+                Toast.MakeText(this, "Registered Successfully!", ToastLength.Short).Show();
+                Finish();
+            }
+            else
+            {
+                Toast.MakeText(this, "Registration Failed! Please try again.", ToastLength.Short).Show();
+                Finish();
+            }
         }
     }
 }

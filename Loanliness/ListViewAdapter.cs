@@ -40,15 +40,35 @@ namespace Loanliness
             LayoutInflater inflater = (LayoutInflater)mainActivity.BaseContext.GetSystemService(Context.LayoutInflaterService);
             View itemView = inflater.Inflate(Resource.Layout.Message_Item_List, null);
 
-            TextView message_user, message_time, message_content;
+            TextView message_user, message_content;
+            LinearLayout userBox;
 
-            message_user = itemView.FindViewById<TextView>(Resource.Id.txtMessageUser);
-            message_content = itemView.FindViewById<TextView>(Resource.Id.txtMessageContent);
-            message_time = itemView.FindViewById<TextView>(Resource.Id.txtMessageTime);
+            message_user = itemView.FindViewById<TextView>(Resource.Id.txtEmailChat);
+            message_content = itemView.FindViewById<TextView>(Resource.Id.txtMessageChat);
+            userBox = itemView.FindViewById<LinearLayout>(Resource.Id.userBoxChat);
 
-            message_user.Text = listMessages[position].Email;
-            message_content.Text = listMessages[position].Message;
-            message_time.Text = listMessages[position].Time;
+
+            if (position > 0)
+            {
+
+                if (listMessages[position].Email == listMessages[position - 1].Email)
+                {
+                    message_content.Text = listMessages[position].Message;
+                    userBox.Visibility = ViewStates.Gone;
+                }
+                else
+                {
+                    message_user.Text = listMessages[position].Email;
+                    message_content.Text = listMessages[position].Message;
+                    userBox.Visibility = ViewStates.Visible;
+                }
+            }
+
+            if (position == 0) {
+                message_user.Text = listMessages[position].Email;
+                message_content.Text = listMessages[position].Message;
+                userBox.Visibility = ViewStates.Visible;
+            }
 
             return itemView;
 

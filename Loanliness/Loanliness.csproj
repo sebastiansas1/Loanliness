@@ -165,6 +165,11 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\Login.axml" />
     <AndroidResource Include="Resources\layout\Message_Item_List.axml" />
+    <AndroidResource Include="Resources\drawable\button_rounded.xml" />
+    <AndroidResource Include="Resources\drawable\bubble_box.xml" />
+    <AndroidResource Include="Resources\drawable\rounded_corners.xml" />
+    <AndroidResource Include="Resources\drawable\rounded_grey_corners.xml" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

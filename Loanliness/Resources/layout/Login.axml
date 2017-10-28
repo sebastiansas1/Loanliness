@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="100"
-    android:background="@android:color/white"
+    android:background="#ff0f93ff"
     android:minWidth="25px"
     android:minHeight="25px">
     <LinearLayout
@@ -16,20 +16,21 @@
         android:id="@+id/containerLogIn"
         android:layout_weight="100"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_margin="25dp"
         android:weightSum="100">
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:id="@+id/txtTitleLogIn"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:gravity="center"
-            android:textSize="30dp"
-            android:layout_weight="15"
+            android:textSize="34dp"
+            android:layout_weight="20"
             android:textStyle="bold"
             android:typeface="monospace"
-            android:text="LOGIN" />
+            android:textAllCaps="false"
+            android:text="Hacky Tree House" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -44,7 +45,7 @@
             android:layout_height="0dp"
             android:id="@+id/formLogIn"
             android:layout_weight="30"
-            android:background="#ffff7d28">
+            android:background="@drawable/rounded_corners">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -62,20 +63,19 @@
                     android:textColor="@android:color/black"
                     android:gravity="center"
                     android:layout_weight="30"
-                    android:typeface="monospace"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
                 <EditText
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/txtEmailLogIn"
-                    android:textColor="@android:color/black"
                     android:gravity="center"
                     android:layout_weight="70"
-                    android:typeface="monospace"
-                    android:textSize="17dp"
+                    android:textSize="15dp"
                     android:hint="enter your email"
-                    android:textColorHint="@color/material_grey_300" />
+                    android:textColorHint="#ff686868"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -92,8 +92,7 @@
                     android:textColor="@android:color/black"
                     android:gravity="center"
                     android:layout_weight="30"
-                    android:typeface="monospace"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
                 <EditText
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="0dp"
@@ -102,25 +101,13 @@
                     android:textColor="@android:color/black"
                     android:gravity="center"
                     android:layout_weight="70"
-                    android:typeface="monospace"
-                    android:textSize="17dp"
-                    android:textColorHint="@color/material_grey_300"
+                    android:textSize="15dp"
+                    android:textColorHint="#ff686868"
                     android:password="true"
-                    android:hint="enter your password" />
+                    android:hint="enter your password"
+                    android:backgroundTint="@android:color/transparent" />
             </LinearLayout>
         </LinearLayout>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:id="@+id/btnSignInLogIn"
-            android:text="Sign In"
-            android:gravity="center"
-            android:layout_weight="10"
-            android:background="@android:color/transparent"
-            android:textColor="#ffff7d28"
-            android:textSize="20dp"
-            android:typeface="monospace"
-            android:textStyle="bold" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -130,14 +117,27 @@
             android:id="@+id/emptySpace"
             android:layout_weight="10" />
         <Button
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:id="@+id/btnSignInLogIn"
+            android:text="Sign In"
+            android:gravity="center"
+            android:layout_weight="10"
+            android:background="@drawable/rounded_corners"
+            android:textColor="#ff0f93ff"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:layout_gravity="center" />
+        <Button
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/btnRegisterLogIn"
+            android:id="@+id/btnRegLogin"
             android:text="Register"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="#ff2863ff"
-            android:typeface="monospace"
-            android:textSize="20dp"
-            android:layout_weight="10" />
+            android:gravity="center"
+            android:layout_weight="10"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

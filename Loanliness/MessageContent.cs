@@ -13,7 +13,7 @@ namespace Loanliness
         {
             this.Email = Email;
             this.Message = Message;
-            Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:");
+            Time = DateTime.Now.ToString("t");
         }
 
     }

@@ -17,13 +17,12 @@ namespace Loanliness
     [Activity(Label = "Loanliness", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class MainActivity : AppCompatActivity, IValueEventListener
     {
-
         private FirebaseClient firebase;
         private List<MessageContent> listMessages = new List<MessageContent>();
         private ListView listChat;
         private EditText editChat;
-        private Button mSend;
-        //private FloatingActionButton fab;
+        private Button sendIt;
+        private Button logOut;
         public int MyResultCode = 1;
 
 
@@ -32,10 +31,12 @@ namespace Loanliness
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            //fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            this.Window.SetSoftInputMode(Android.Views.SoftInput.AdjustPan);
+
             editChat = FindViewById<EditText>(Resource.Id.txtInputMessageChat);
             listChat = FindViewById<ListView>(Resource.Id.listOfMessageChat);
-            mSend = FindViewById<Button>(Resource.Id.send);
+            sendIt = FindViewById<Button>(Resource.Id.sendMessage);
+            logOut = FindViewById<Button>(Resource.Id.btnLogOutChat);
 
             var options = new FirebaseOptions.Builder()
                                              .SetApplicationId("1:1058907657016:android:91dad6ec07dc7809")
@@ -48,10 +49,17 @@ namespace Loanliness
             firebase = new FirebaseClient(GetString(Resource.String.firebase_database_url));
             FirebaseDatabase.Instance.GetReference("chats").AddValueEventListener(this);
 
+            //mSend.Click += MSend_Click;
 
-            mSend.Click += delegate
+            sendIt.Click +=  (sender, e) => 
             {
                 PostMessage();
+                DisplayChatMessage();  
+            };
+
+            logOut.Click += (sender, e) => 
+            {
+                StartActivity(typeof(LoginActivity));
             };
 
 
@@ -65,7 +73,6 @@ namespace Loanliness
                 DisplayChatMessage();
             }
         }
-
 
         public void OnCancelled(DatabaseError error)
         {

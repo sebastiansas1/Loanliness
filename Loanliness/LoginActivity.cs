@@ -34,12 +34,11 @@ namespace Loanliness
             var mEmail = FindViewById<EditText>(Resource.Id.txtEmailLogIn);
             var mPass = FindViewById<EditText>(Resource.Id.txtPassLogIn);
 
-            var mBtnReg = FindViewById<Button>(Resource.Id.btnRegisterLogIn);
+            var mBtnReg = FindViewById<Button>(Resource.Id.btnRegLogin);
             var mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignInLogIn);
 
-            mBtnReg.Click += delegate {
-                auth.CreateUserWithEmailAndPassword(mEmail.Text, mPass.Text)
-                    .AddOnCompleteListener(this);
+            mBtnReg.Click += (sender, e) => {
+                auth.CreateUserWithEmailAndPassword(mEmail.Text, mPass.Text).AddOnCompleteListener(this);
             };
         }
 

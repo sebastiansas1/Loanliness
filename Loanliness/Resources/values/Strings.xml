@@ -2,5 +2,5 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">Loanliness</string>
-	<string name="firebase_database_url">https://loanliness-4097c.firebaseio.com></string>
+	<string name="firebase_database_url">https://loanliness-4097c.firebaseio.com/></string>
 </resources>

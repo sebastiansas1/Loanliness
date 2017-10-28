@@ -1,29 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:weightSum="100">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userBoxChat"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:src="@drawable/googleg_standard_color_18"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Username"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtEmailChat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
     <TextView
+        android:text="Message adkvnjdanvjdsnvjnsjdvnsdjvnsdjjvnsvdjnsdvjndsvjndsvjndsvjndsvjndsvjndvsnjvavdjnvadjndjvndavjndvjnadvjndjvandjvn you"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/txtMessageUser"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/txtMessageUser"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/txtMessageTime" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtMessageUser"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:id="@+id/txtMessageContent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="15dp" />
+        android:id="@+id/txtMessageChat"
+        android:background="@drawable/bubble_box"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:gravity="center_vertical" />
 </LinearLayout>
